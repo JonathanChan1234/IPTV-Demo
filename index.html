@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css" />
+    <body>
+        <div class="container">
+            <video id="video" muted></video>
+            <div class="bottom-row-container">
+                <div id="forecast-container"></div>
+                <img src="./assets/settings.png" class="settings-icon" onclick="toggleSettings()" />
+            </div>
+            <div id="error-text"></div>
+            <div id="settings-container" class="hide">
+                <form onsubmit="changeStream(event)" class="settings-form">
+                    <label for="stream-source-select">Stream Source</label>
+                    <select id="stream-source-select">
+                        <option
+                            value="https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8
+"
+                        >
+                            港台電視 31
+                        </option>
+                        <option
+                            value="https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8
+"
+                        >
+                            港台電視 32
+                        </option>
+                        <option
+                            value="http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8
+"
+                        >
+                            香港開電視台
+                        </option>
+                        <option
+                            value="https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8
+"
+                        >
+                            ABC News
+                        </option>
+                        <option
+                            value="https://n24-cdn-live.ntv.co.jp/ch01/index.m3u8
+"
+                        >
+                            日テレNEWS24
+                        </option>
+                    </select>
+                    <div id="resolution-text"></div>
+                    <label for="player-select">Player Size</label>
+                    <select id="player-select" onchange="changePlayerSize(event)">
+                        <option value="240px">240px</option>
+                        <option value="426px">426px</option>
+                        <option value="640px">640px</option>
+                        <option value="720px">720px</option>
+                        <option value="854px">854px</option>
+                        <option value="1280px">1280px</option>
+                        <option value="1920px">1920px</option>
+                        <option value="80%">80%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    <button type="submit">Change</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script src="./hls.js"></script>
+    <script src="./script.js"></script>
+</html>
