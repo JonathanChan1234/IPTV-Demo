@@ -85,7 +85,7 @@ function fetchForecastData() {
         src="./assets/pic${data.icon}.png"
                        style="
                            background-color: #1b5397;
-                           width: 77px;
+                           width: 50px;
                            border-radius: 15px;
                            padding: 5px;
                        "
@@ -101,7 +101,7 @@ function fetchForecastData() {
 }
 
 fetchForecastData();
-playHLSStream('https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8', '1280px');
+playHLSStream('https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8', '768px');
 setInterval(function () {
     fetchForecastData();
 }, 300000);
