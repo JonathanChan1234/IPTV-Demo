@@ -135,8 +135,36 @@ function getMonthShortForm(month) {
     }
 }
 
-setInterval(() => {
+function updateDateTimeText() {
     const dateText = document.getElementById('date-text');
+    const timeText = document.getElementById('time-text');
     const date = new Date();
     dateText.innerHTML = `${date.getDate()} ${getMonthShortForm(date.getMonth())}, ${date.getFullYear()}`;
-}, 1000);
+    timeText.innerHTML = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+}
+
+function updateTimeslotStatus() {
+    const timeslots = document.getElementsByClassName('timeslot');
+    for (const timeslot of timeslots) {
+        const random = Math.floor(Math.random() * 3);
+        timeslot.classList.remove('occupied');
+        timeslot.classList.remove('closed');
+        timeslot.innerHTML = '';
+        switch (random) {
+            case 0:
+                break;
+            case 1:
+                timeslot.innerHTML = 'Occupied';
+                timeslot.classList.add('occupied');
+                break;
+            case 2:
+                timeslot.classList.add('closed');
+                break;
+        }
+    }
+}
+
+updateDateTimeText();
+updateTimeslotStatus();
+setInterval(updateDateTimeText, 1000);
+setInterval(updateTimeslotStatus, 10000);

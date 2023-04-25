@@ -12,8 +12,14 @@ body {
     text-align: center;
 }
 
-.table td.crossed {
-    background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), red, transparent calc(50% + 1px));
+.table .occupied {
+    background-color: red !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.table .closed {
+    background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), red, transparent calc(50% + 1px)) !important;
 }
 
 .container {
